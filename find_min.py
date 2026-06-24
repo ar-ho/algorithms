@@ -7,7 +7,6 @@ Implement the "find minimum" algorithm in Python by completing the find_minimum(
     If the list is empty, return None.
     For each number in the list nums, compare it to minimum. If the number is smaller than minimum, set minimum to that number.
     minimum is now set to the smallest number in the list. Return it.
-
 '''
 
 def find_minimum(nums: list[int]) -> float | None:
