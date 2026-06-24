@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 '''
 
     Start with input variables a and b

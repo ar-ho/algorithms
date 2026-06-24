@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 '''
 Implement the "find minimum" algorithm in Python by completing the find_minimum() function. It accepts a list of integers nums and returns the smallest number in the list.
 
