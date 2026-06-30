@@ -37,3 +37,11 @@ def average_followers(nums: list[int]) -> float | None:
     for n in nums:
         result += n
     return result / len(nums)
+
+#highest engagement score
+def find_max(nums: list[float]) -> float:
+    highest = float("-inf")
+    for num in nums:
+        if num > highest:
+            highest = num
+    return highest
