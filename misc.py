@@ -19,3 +19,12 @@ def decayed_followers(
 ) -> float:
     res = initial_followers * (1 - fraction_lost_daily) ** days
     return res
+
+#logarithmic scale
+import math
+
+def log_scale(data: list[float], base: float) -> list[float]:
+    new_list = []
+    for d in data:
+        new_list.append(math.log(d, base))
+    return new_list
