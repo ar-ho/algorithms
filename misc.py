@@ -28,3 +28,12 @@ def log_scale(data: list[float], base: float) -> list[float]:
     for d in data:
         new_list.append(math.log(d, base))
     return new_list
+
+#average
+def average_followers(nums: list[int]) -> float | None:
+    result = 0
+    if not nums:
+        return None
+    for n in nums:
+        result += n
+    return result / len(nums)
