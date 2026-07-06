@@ -65,4 +65,18 @@ def get_avg_brand_followers(all_handles: list[list[str]], brand_name: str) -> fl
             if brand_name in i:
                 result.append(i)
     return len(result) / len(all_handles)
-    
+
+#find last name
+def find_last_name(names_dict: dict[str, str], first_name: str) -> str | None:
+    for current_first_name, last_name in names_dict.items():
+        if current_first_name == first_name:
+            return last_name
+        else:
+            return None
+
+#find last name faster
+def find_last_name(names_dict: dict[str, str], first_name: str) -> str | None:
+    try:
+        return names_dict[first_name]
+    except KeyError:
+        return None
