@@ -56,3 +56,13 @@ def does_name_exist(
             if f"{f} {l}" == full_name:
                 return True
     return False
+
+#checks if brand_name is in a follower's list of brands
+def get_avg_brand_followers(all_handles: list[list[str]], brand_name: str) -> float:
+    result = []
+    for a in all_handles:
+        for i in a:
+            if brand_name in i:
+                result.append(i)
+    return len(result) / len(all_handles)
+    
