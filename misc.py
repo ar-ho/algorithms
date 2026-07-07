@@ -80,3 +80,12 @@ def find_last_name(names_dict: dict[str, str], first_name: str) -> str | None:
         return names_dict[first_name]
     except KeyError:
         return None
+
+#find target name
+def count_names(list_of_lists: list[list[str]], target_name: str) -> int:
+    count = 0
+    for inner_list in list_of_lists:
+        for name in inner_list:
+            if target_name == name:
+                count += 1
+    return count
