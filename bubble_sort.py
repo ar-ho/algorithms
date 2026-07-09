@@ -12,6 +12,12 @@ Bubble sort repeatedly steps through a slice and compares adjacent elements, swa
         Decrement end by one
     Return the sorted list
 
+Bubble sort is a simple sorting algorithm that repeatedly compares adjacent elements in a list 
+and swaps them if they are in the wrong order. 
+After each pass through the list, the largest unsorted element "bubbles" to its correct position at the end. 
+This process continues until no more swaps are needed, meaning the list is sorted.
+
+
 '''
 
 def bubble_sort(nums: list[int]) -> list[int]:
