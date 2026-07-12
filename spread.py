@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 '''
-
 Assignment
 
 In the social media industry, there is a concept called "spread": how much a post spreads due to "reshares" after all of the original author's followers see it. As it turns out, social media posts spread at an exponential rate! We've found that the estimated spread of a post can be calculated with this formula:
