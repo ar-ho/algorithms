@@ -17,6 +17,14 @@ and swaps them if they are in the wrong order.
 After each pass through the list, the largest unsorted element "bubbles" to its correct position at the end. 
 This process continues until no more swaps are needed, meaning the list is sorted.
 
+The for loop is the part where the array is sorted. 
+Each iteration of the for loops results in the higest number of the range(1, end) bubbling to the end of the list.
+That's why end -= 1 is needed to reduce the range of the for loop, since the last element is already sorted and is the highest number in the list.
+The next iteration then again bubbles the next highest number to the end of the list, and so on, until the entire list is sorted.
+The exit condition of the while loop is when end shrinks down to 1.
+That means nums[i - 1] results to 0 and nums[i] results to 1
+and the if condition nums[i - 1] > nums[i] results to False since nums[0] is not greater than nums[1] and swapping remains False,
+swapping = True is not executed, exiting the while loop and returning the sorted list. 
 
 '''
 
