@@ -45,6 +45,7 @@ def quick_sort(nums: list[int], low: int, high: int) -> None:
         # This means p is 3 + 1 and high is 4, i.e. the [8] section of the list will be sorted in the next recursive call.
         quick_sort(nums, p + 1, high)
 
+        # This happens over and over again until the condition low < high is no longer true, which means the list is sorted.
 
 def partition(nums: list[int], low: int, high: int) -> int:
     # Choose the last element as the pivot.
