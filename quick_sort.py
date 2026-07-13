@@ -46,9 +46,11 @@ def partition(nums: list[int], low: int, high: int) -> int:
     # Choose the last element as the pivot.
     pivot = nums[high]
 
-    # i keeps track of the position where the next smaller element
-    # should be placed.
+    # i keeps track of the position where the next smaller element should be placed.
     # It starts one position before the beginning of the current section.
+    # i is never accessed directly; it is only used to determine where to place the next smaller element.
+    # This won't lead to an IndexError when low = 0 and therefore i = -1 
+    # because the first time we increment i, it will be equal to low i.e. 0, which is a valid index.
     i = low - 1
 
     # Examine every element except the pivot.
@@ -56,6 +58,13 @@ def partition(nums: list[int], low: int, high: int) -> int:
 
         # If the current element is smaller than the pivot,
         # it belongs on the left side.
+        # example: nums = [8, 3, 5, 2, 7]
+        # nums[j] is nums [0] because j is at the starting value of 0 and the value is 8
+        # the value of pivot is 7 because it is the last element in the list
+        # that means the condition is false and we do not enter the if statement
+        # the loop iteration continues and j is now 1 and the value of nums[j] is 3, i is still -1 and pivot is still 7
+        # the condition is true and we enter the if statement, increment i to 0 and swap nums[0] with nums[1] so the list becomes [3, 8, 5, 2, 7]
+        # and so on until the loop is finished the list after the last iteration is [3, 2, 5, 8, 7] and i is 2
         if nums[j] < pivot:
 
             # Move the boundary between smaller and larger elements.
@@ -66,7 +75,11 @@ def partition(nums: list[int], low: int, high: int) -> int:
 
     # After all elements have been checked,
     # place the pivot immediately after the smaller elements.
+    # i always one index behind the pivot, that's why we swap nums[i + 1] with nums[high] (the pivot).
+    # this swaps the pivot at nums[i + 1] with the element at nums[high] (the pivot's original position).
+    # the list looks like this afterwards [3,5,2,7,8]
     nums[i + 1], nums[high] = nums[high], nums[i + 1]
 
     # Return the pivot's final index.
+    # Which the index of 3 (the value is 7 but does not get returned) 
     return i + 1
