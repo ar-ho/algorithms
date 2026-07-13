@@ -36,9 +36,13 @@ def quick_sort(nums: list[int], low: int, high: int) -> None:
         p = partition(nums, low, high)
 
         # Recursively sort all elements to the left of the pivot.
+        # Using the list from the partition run [3,5,2,7,8]
+        # This means low is 0 and p is 3 - 1, i.e. the [3,5,2] section of the list will be sorted in the next recursive call.
         quick_sort(nums, low, p - 1)
 
         # Recursively sort all elements to the right of the pivot.
+        # Using the list from the partition run [3,5,2,7,8]
+        # This means p is 3 + 1 and high is 4, i.e. the [8] section of the list will be sorted in the next recursive call.
         quick_sort(nums, p + 1, high)
 
 
