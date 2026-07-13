@@ -26,6 +26,9 @@ The process is started with quick_sort(A, 0, len(A)-1).
 def quick_sort(nums: list[int], low: int, high: int) -> None:
     # Check if the current section of the list contains at least two elements.
     # If low >= high, the section is already sorted (0 or 1 element).
+    # Low is the starting index of the section, and high is the ending index.
+    # Starting values usually are: low = 0 and high = len(nums) - 1 (length of nums minus 1, the index of the last element).
+
     if low < high:
 
         # Partition the list around a pivot.
