@@ -89,3 +89,25 @@ def count_names(list_of_lists: list[list[str]], target_name: str) -> int:
             if target_name == name:
                 count += 1
     return count
+
+'''
+Assignment
+
+Implement the count_marketers function. It should accept a list of strings (job titles) and return the number of users who've set their title to "marketer". LockedIn users sometimes use different casing in their titles, so make sure to account for that.
+
+count = count_marketers(['programmer', 'marketer', 'doctor', 'marketer'])
+print(count)
+# prints "2"
+
+Tip
+
+The .lower() method can be used to convert a string to lowercase.
+'''
+def count_marketers(job_titles: list[str]) -> int:
+    count: int = 0
+    if not job_titles:
+        return count
+    for j in job_titles:
+        if j.lower() == "marketer":
+            count += 1
+    return count
