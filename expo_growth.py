@@ -28,3 +28,26 @@ def get_follower_prediction(
     if influencer_type == "cosmetic":
         return follower_count * (3**num_months)
     return follower_count * (2**num_months)
+
+'''
+Assignment
+
+Complete the exponential_growth function. Given the initial followers count n, growth factor factor, and number of days days, return a list containing the exponential growth of followers for each day.
+
+For example:
+
+- Initial followers: 10
+- Growth factor: 2
+- Days: 4
+
+Growth sequence: [10, 20, 40, 80, 160]
+
+Each day's value is the previous day's value multiplied by factor.
+'''
+
+def exponential_growth(n: int, factor: int, days: int) -> list[int]:
+    result = [n] 
+    for d in range(days):
+        n = n*factor
+        result.append(n)
+    return result
