@@ -1,5 +1,4 @@
-from node import Node
-
+from typing import Any
 
 class LLQueue:
     def remove_from_head(self) -> Node | None:
@@ -38,3 +37,15 @@ class LLQueue:
         for node in self:
             nodes.append(node.val)
         return " <- ".join(nodes)
+
+class Node:
+    def __init__(self, val: Any) -> None:
+        self.val = val
+        self.next: "Node | None" = None
+
+    def set_next(self, node: "Node | None") -> None:
+        self.next = node
+
+    def __repr__(self) -> str:
+        return self.val
+
